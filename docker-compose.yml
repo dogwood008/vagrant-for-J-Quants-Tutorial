@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - '8888:8888'
+    volumes:
+      # https://docs.docker.jp/docker-for-mac/osxfs-caching.html#consistentcacheddelegated
+      # delegated: コンテナの表示が信頼できる（コンテナ上の更新がホスト上に反映するまで、遅延が発生するのを許容）
+      # cached: ホストの表示が信頼できる（ホスト上の更新がコンテナ上に反映するまで、遅延が発生するのを許容）
+      # データ配置先のディレクトリ
+      - ./data_dir:/path/to:cached
+      # 学習済みモデル提出用のディレクトリ (handson/Chapter02/archive)
+      - ./Chapter02/archive:/opt/ml:delegated
+      # カレントディレクトリを JupyterNotebook の保存先にする
+      - .:/notebook:delegated
+    environment:
+      - PYTHONPATH=/opt/ml/src

@@ -1,0 +1,3 @@
+[submodule "J-Quants-Tutorial"]
+	path = J-Quants-Tutorial
+	url = https://github.com/JapanExchangeGroup/J-Quants-Tutorial.git
