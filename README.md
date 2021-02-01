@@ -21,6 +21,10 @@ Vagrant + Docker + Docker Compose で構築した、 [J-Quants-Tutorial](https:/
 1. `vagrant halt`
 
 
+## これは何か？
+
+株式会社日本取引所グループ様が公開されている[株式分析チュートリアル](https://japanexchangegroup.github.io/J-Quants-Tutorial/)を、できるだけ誰でも簡単に実行できる環境を素早く用意することができるようにするためのリポジトリです。
+
 ## なぜこれを使うのか？どのように有用なのか？
 
 「環境のセットアップには興味が無い」「はやくチュートリアルに取りかかりたい」「しょうもないところで躓きたくない」という方におすすめです。
