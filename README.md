@@ -652,3 +652,15 @@ OS と この `README.md` の「どこまで試して、何が表示されてい
 ### Is there any English version?
 
 Not yet now. Please use deepl.com or Google Trans. I'm glad if you make a PR to add it.
+
+
+## 動作確認
+
+### ✅ Windows
+
+![Windows](docs/images/win.png)
+
+
+### ✅ mac
+
+![mac](docs/images/mac.png)
