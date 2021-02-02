@@ -8,11 +8,15 @@ Vagrant + Docker + Docker Compose で構築した、 [J-Quants-Tutorial](https:/
 
 ### Start
 
-1. `git clone https://github.com/dogwood008/vagrant-for-J-Quants-Tutorial.git && cd vagrant-for-J-Quants-Tutorial`
+1. `git clone --recursive https://github.com/dogwood008/vagrant-for-J-Quants-Tutorial.git && cd vagrant-for-J-Quants-Tutorial && mkdir -p J-Quants-Tutorial/handson/data_dir`
+1. [CSVをダウンロード](https://signate.jp/competitions/423/data)
+1. `./J-Quants-Tutorial/handson/data_dir` に `*.csv.gz` をコピー
+1. `cp first_demo.ipynb J-Quants-Tutorial/handson/`
 1. `vagrant up`
 1. `vagrant ssh`
-1. `cd J-Quants-Tutorial/handson && docker-compose up`
+1. `cd ./J-Quants-Tutorial/handson && docker-compose up`
 1. [`http://localhost:8888`](http://localhost:8888)
+1. `first_demo` を開いて `Cell` → `Run All`
 
 ### Terminate
 
@@ -54,7 +58,7 @@ mac の人は、 [`brew install --cask vagrant`](https://formulae.brew.sh/cask/v
 
 Windows の人はコマンドプロンプトか Windows PowerShell （おすすめ）を開いて下記コマンドを入力。 mac の人は標準のターミナルかご自身でインストールされたコンソールから下記コマンドを入力してください。以下、それらをまとめて端末と呼ぶことにします。
 
-`vagrant plugin install vagrant-disksize`
+`vagrant plugin install vagrant-disksize vagrant-vbguest`
 
 今後、この `README.md` において、 `コマンドらしき文字列` が書かれていたらそれは全てコマンドかファイル名かそういった感じの意味のある文字列をさします。
 
@@ -67,8 +71,13 @@ Windows の人はコマンドプロンプトか Windows PowerShell （おすす�
 
 次に、このリポジトリをクローンして、カレントディレクトリをそのクローンしてきたディレクトリの中に移動します。下記を端末に入力してください。
 
-`git clone https://github.com/dogwood008/vagrant-for-J-Quants-Tutorial.git && cd vagrant-for-J-Quants-Tutorial`
+`git clone --recursive https://github.com/dogwood008/vagrant-for-J-Quants-Tutorial.git && cd vagrant-for-J-Quants-Tutorial && mkdir -p J-Quants-Tutorial/handson/data_dir`
 
+### CSVデータのコピー
+
+前項の操作により、今はクローンしてきたリポジトリである `vagrant-for-J-Quants-Tutorial` がカレントディレクトリになっているはずである。
+
+`./J-Quants-Tutorial/handson/data_dir` に [データの配布場所](https://signate.jp/competitions/423/data)から取得した `*.csv.gz` をコピーまたは移動する。この時、gzファイルを展開する必要は無い（展開しても、ハンズオンで書くコードからはそのファイルを参照しない）。
 
 ## 使い方 - 次回から
 
@@ -643,3 +652,15 @@ OS と この `README.md` の「どこまで試して、何が表示されてい
 ### Is there any English version?
 
 Not yet now. Please use deepl.com or Google Trans. I'm glad if you make a PR to add it.
+
+
+## 動作確認
+
+### ✅ Windows
+
+![Windows](docs/images/win.png)
+
+
+### ✅ mac
+
+![mac](docs/images/mac.png)
